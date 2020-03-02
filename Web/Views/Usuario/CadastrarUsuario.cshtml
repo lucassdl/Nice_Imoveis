@@ -1,0 +1,31 @@
+﻿@model UsuarioModel
+
+<h3>@ViewData["Titulo"]</h3>
+<hr />
+
+<form asp-action="CadastrarUsuario">
+    <div class="form-group">
+        <label asp-for="NomeDoUsuario" class="col-md-2">Nome</label>
+        <div class="col-md-10">
+            <input asp-for="NomeDoUsuario" maxlength="20" class="form-control" />
+            @Html.ValidationMessageFor(u => u.NomeDoUsuario, null, new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="EmailDoUsuario " class="col-md-2">Email</label>
+        <div class="col-md-10">
+            <input type="email" asp-for="EmailDoUsuario" maxlength="100" class="form-control" />
+            @Html.ValidationMessageFor(u => u.EmailDoUsuario, null, new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="SenhaDoUsuario" class="col-md-2">Senha</label>
+        <div class="col-md-10">
+            <input type="password" asp-for="SenhaDoUsuario" maxlength="100" class="form-control" />
+            @Html.ValidationMessageFor(u => u.SenhaDoUsuario, null, new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Salvar" class="btn btn-info" />
+    </div>
+</form>
